@@ -1,2 +1,4 @@
 # CP275_HWS
-Formal Analysis and Control of Autonomous Systems
+This course will provide an end-to-end overview of different topics involved in designing or analyzing autonomous systems. It begins with different formal modeling frameworks used for autonomous systems including state-space representations (difference equations), hybrid automata, and in general labeled transition systems. It also discusses different ways of formally modeling properties of interest for such systems such as stability, invariance, reachability, and temporal logic properties. 
+
+As a next step, the course will cover different techniques on the verification of such systems including Lyapunov functions, reachability, barrier certificates, and potentially model checking. Finally, the course will introduce students to several techniques for designing controllers enforcing properties of interest over autonomous systems. 
