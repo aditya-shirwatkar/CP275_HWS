@@ -1,4 +1,5 @@
-clear all
+clear
+clc
 close all
 
 params.Nsteps = 100;
@@ -56,6 +57,7 @@ b1 = 30;
 n_g1 = params.Nsteps-b1;
 [constr, theta_g1] = quant_globally(theta1, 1, a1, b1);
 constraints = [constraints; constr];
+
 %------------------------------
 
 alt_ub = 10.;

@@ -134,7 +134,7 @@ constraints = [constraints; constr]; %theta_phi(1)==5  theta_phi(1)>=1
 objective = theta_phi(1);
 %objective = L-sum(abs(u));
 
-options = sdpsettings('solver','mosek');
+options = sdpsettings('solver','gurobi');
 sol = optimize(constraints, -objective, options);
 
 %%
