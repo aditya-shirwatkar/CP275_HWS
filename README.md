@@ -27,7 +27,7 @@ The code can be found in [time-robust-control](/time-robust-control)
 
 |     | Time Robust Control | Convex MPC |
 | :-: | :-----------------: | :--------: |
-|     | <img src="./time%20robust%20control/multi_3D_uav_time_rob_qp.gif" width=400> | <img src="./time%20robust%20control/multi_3D_uav_qp.gif" width=400> |
+|     | <img src="./time%20robust%20control/multi_3D_uav_time_rob_qp.gif" width=300> | <img src="./time%20robust%20control/multi_3D_uav_qp.gif" width=300> |
 | Solver Time (secs) | 44 | 0.01 |
 | Time Robustness (`dt` units) | 1 | Does not exist |
 | Trajectory | Little Jerky | Smooth |
