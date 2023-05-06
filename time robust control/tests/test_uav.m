@@ -13,6 +13,10 @@ u_max = 0.2;
 u_bds = -u_max*ones(params.N, 1) <= u <= u_max*ones(params.N, 1);
 constraints = [constraints; u_bds];
 
+R = 0.001;
+
+objective = 0;
+
 %% Dynamics
 x0 = [0, 0];
 x = x0;
@@ -23,6 +27,8 @@ for k = 1:params.N
     x_k = x(end, :)';
     u_k = u(k);
     
+    % objective = objective - R*u_k^2;
+
     %wk = [0; 0.01]* normrnd(0,1);
     x_kp1 = A*x_k + B*u_k;
     x = [x; x_kp1'];
@@ -76,10 +82,10 @@ n_phi = min(n_g1, n_g2);
 constraints = [constraints; constr];
 
 %-------------------------------------------------
-objective = theta_phi;
+objective = objective + theta_phi;
 %objective = L-sum(abs(u));
 
-options = sdpsettings('solver','mosek');
+options = sdpsettings('solver','gurobi');
 sol = optimize(constraints, -objective, options);
 
 %%

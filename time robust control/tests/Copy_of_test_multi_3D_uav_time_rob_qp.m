@@ -40,8 +40,8 @@ Bd = blkdiag(B_uav, B_uav);
 u0 = 10.5916;
 u_uav_min = [9.6; 9.6; 9.6; 9.6] - u0;
 u_uav_max = [15; 15; 15; 15] - u0;
-x_uav_min = [-pi/6; -pi/6; -pi; -2; -2;  -0; -6.0*pi; -6.0*pi; -1.5*pi; -1; -1; -8];
-x_uav_max = [ pi/6;  pi/6;  pi;  2;  2; 2.5;  6.0*pi;  6.0*pi;  1.5*pi;  1;  1;  8];
+x_uav_min = [-pi/6; -pi/6; -pi; -2; -2;  -0; -6.0*pi; -6.0*pi; -2.5*pi; -2; -2; -10];
+x_uav_max = [ pi/6;  pi/6;  pi;  2;  2; 2.5;  6.0*pi;  6.0*pi;  2.5*pi;  2;  2;  10];
 
 umin = [u_uav_min; u_uav_min]';
 umax = [u_uav_max; u_uav_max]';

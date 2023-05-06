@@ -13,6 +13,10 @@ u_max = 20;
 u_bds = -u_max*ones(params.N, 2*params.agents) <= u <= u_max*ones(params.N, 2*params.agents);
 constraints = [constraints; u_bds];
 
+R = 1e-10*eye(2*params.agents);
+
+objective = 0;
+
 %% Dynamics
 x01 = [11, 0, 11, 0];
 x02 = [4, 0, 4, 0];
@@ -24,6 +28,7 @@ for k = 1:params.N
     x_k = x(end, :)';
     u_k = u(k, :)';
    
+    objective = objective - u_k'*R*u_k;
     x_kp1 = A*x_k + B*u_k;
     x = [x; x_kp1'];
 end
@@ -131,10 +136,10 @@ constraints = [constraints; constr]; %theta_phi(1)==5  theta_phi(1)>=1
 
 %theta_phi = theta_ch1_globally;
 
-objective = theta_phi(1);
+objective = objective + theta_phi(1);
 %objective = L-sum(abs(u));
 
-options = sdpsettings('solver','gurobi');
+options = sdpsettings('solver','gurobi', 'gurobi.TimeLimit', 260);
 sol = optimize(constraints, -objective, options);
 
 %%
